@@ -1,7 +1,8 @@
-import React from "react";
-import Tag from "./index";
+import React from 'react';
+import { Tag } from './index';
+
 export default {
-  title: "Tag title",
+  title: 'Tag title',
   component: Tag,
 };
 export const Basic = () => <Tag />;
