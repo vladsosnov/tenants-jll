@@ -1,0 +1,32 @@
+.flexContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.flexContainerItem {
+  max-width: 320px;
+  margin: 8px 16px;
+  padding: 0 !important;
+  cursor: pointer;
+}
+
+.tenantsContainer {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 90vh;
+  margin-top: 56px;
+}
+
+.tenantsPagination {
+  display: flex;
+  justify-content: center;
+  margin: 36px 0;
+}
+
+@media (min-width: 1480px) {
+  .tenantsContainer {
+    max-width: 100% !important;
+  }
+}

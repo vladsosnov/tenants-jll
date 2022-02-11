@@ -1,4 +1,5 @@
 import { AppBar, Toolbar, styled, Typography } from '@mui/material';
+import styles from './header.module.css';
 
 const StyledAppTitle = styled(Typography)`
   display: block;
@@ -10,6 +11,7 @@ export const Header = () => {
   return (
     <AppBar
       position="fixed"
+      className={styles.header}
       sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
     >
       <Toolbar disableGutters variant="dense">

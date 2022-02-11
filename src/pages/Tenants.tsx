@@ -2,8 +2,10 @@ import { useEffect, useState } from 'react';
 import { tenantsAPI } from 'api';
 import { Header } from 'components/Shared';
 import type { Tenant } from 'types';
-import { Pagination } from '@mui/material';
+import { Pagination, List, ListItem, Container } from '@mui/material';
 import { usePagination } from 'hooks/usePagination';
+import { TenantItem } from 'components/TenantItem/TenantItem';
+import './style.css';
 
 const PER_PAGE = 20;
 
@@ -29,17 +31,16 @@ export const Tenants = () => {
   };
 
   return (
-    <div>
+    <Container className="tenantsContainer">
       <Header />
-      <ul>
-        {tenantsUP.currentData().map((v) => {
-          return (
-            <li key={v.id}>
-              <div>${v.id}</div>
-            </li>
-          );
-        })}
-      </ul>
+      <List className="flexContainer">
+        {tenantsUP.currentData().map((tenant) => (
+          <ListItem className="flexContainerItem" key={tenant.id}>
+            <TenantItem item={tenant} />
+          </ListItem>
+        ))}
+      </List>
+
       <Pagination
         count={count}
         size="large"
@@ -47,7 +48,8 @@ export const Tenants = () => {
         variant="outlined"
         shape="rounded"
         onChange={handleChange}
+        className="tenantsPagination"
       />
-    </div>
+    </Container>
   );
 };
