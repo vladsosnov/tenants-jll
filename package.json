@@ -32,8 +32,7 @@
     "lint:fix": "yarn lint:scripts:fix && yarn lint:styles:fix",
     "prepare": "husky install",
     "eject": "react-scripts eject",
-    "storybook": "start-storybook",
-    "commit": "git-cz"
+    "storybook": "start-storybook"
   },
   "browserslist": {
     "production": [
@@ -48,19 +47,18 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.17.2",
     "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
     "@commitlint/cz-commitlint": "^15.0.0",
-    "@typescript-eslint/eslint-plugin": "^5.5.0",
-    "@typescript-eslint/parser": "^5.5.0",
-    "@babel/core": "^7.17.2",
     "@storybook/addon-docs": "6.4.18",
     "@storybook/react": "6.4.18",
+    "@typescript-eslint/eslint-plugin": "^5.5.0",
+    "@typescript-eslint/parser": "^5.5.0",
     "babel-loader": "^8.2.3",
-    "prettier": "^2.5.0",
     "commitizen": "^4.2.4",
-    "eslint": "^8.3.0",
     "cz-conventional-changelog": "3.3.0",
+    "eslint": "^8.3.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-config-react-app": "^6.0.0",
     "eslint-import-resolver-typescript": "^2.5.0",
@@ -71,13 +69,14 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.27.1",
     "eslint-plugin-react-hooks": "^4.2.1-beta-71d16750c-20211202",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.2",
+    "prettier": "^2.5.0",
     "stylelint": "^14.1.0",
     "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-standard-scss": "^3.0.0",
     "stylelint-images": "^2.0.1",
-    "stylelint-order": "^5.0.0",
-    "husky": "^7.0.4",
-    "lint-staged": "^12.1.2"
+    "stylelint-order": "^5.0.0"
   },
   "config": {
     "commitizen": {
