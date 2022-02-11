@@ -1,0 +1,1 @@
+export { tenantsAPI } from './tenantsAPI';

@@ -1,1 +1,3 @@
-export const Tenants: any = [];
+import type { Tenant } from 'types';
+
+export const Tenants: Tenant[] = [];
