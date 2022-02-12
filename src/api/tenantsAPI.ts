@@ -3,4 +3,6 @@ import { tenantsClient } from './tenantsClient';
 
 export const tenantsAPI = {
   getTenants: () => tenantsClient.get<unknown, Tenant[]>(`/tenants`),
+  getTenant: (id: string | undefined) =>
+    tenantsClient.get<unknown, Tenant[]>(`/tenants?id=${id}`),
 };

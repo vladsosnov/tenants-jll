@@ -1,1 +1,0 @@
-export { TenantAvatar } from './TenantAvatar';

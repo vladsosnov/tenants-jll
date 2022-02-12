@@ -11,6 +11,12 @@
   cursor: pointer;
 }
 
+.flexContainerItemLink {
+  width: 100%;
+  color: #161616;
+  text-decoration: none;
+}
+
 .tenantsContainer {
   display: flex !important;
   flex-direction: column;
@@ -23,6 +29,16 @@
   display: flex;
   justify-content: center;
   margin: 36px 0;
+}
+
+.tenantProfile {
+  max-width: 768px;
+}
+
+.tenantProfileHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 @media (min-width: 1480px) {

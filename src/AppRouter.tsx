@@ -6,7 +6,7 @@ export const AppRouter = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Tenants />} />
-        <Route path="/tenant-profile/:tenantId" element={<TenantProfile />} />
+        <Route path="/profile/:tenantId" element={<TenantProfile />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

@@ -8,11 +8,18 @@ interface TenantItemProps {
 }
 
 export const TenantItem: FC<TenantItemProps> = ({ item }) => {
+  const tenantItemHeadClass = item.status
+    ? styles.tenantItemHead
+    : styles.tenantItemEmptyHead;
+
   return (
     <div className={styles.tenantItem}>
-      <div className={styles.tenantItemHead}>
+      <div className={tenantItemHeadClass}>
         <Avatar size="42" round name={item.code} />
         <div>
+          <div>
+            Id: <strong>{item.id}</strong>
+          </div>
           {item.type && (
             <div>
               Type: <strong>{item.type.toLowerCase()}</strong>
@@ -25,7 +32,7 @@ export const TenantItem: FC<TenantItemProps> = ({ item }) => {
           )}
         </div>
       </div>
-      <div>{`${item.description.substr(0, 98)}...`}</div>
+      {item.description && <div>{`${item.description?.substr(0, 98)}...`}</div>}
     </div>
   );
 };
