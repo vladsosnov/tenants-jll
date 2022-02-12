@@ -8,6 +8,7 @@ export const usePagination = (data: Tenant[], itemsPerPage: number) => {
   const currentData = () => {
     const begin = (currentPage - 1) * itemsPerPage;
     const end = begin + itemsPerPage;
+
     return data.slice(begin, end);
   };
 
@@ -19,10 +20,10 @@ export const usePagination = (data: Tenant[], itemsPerPage: number) => {
     setCurrentPage((currentPage) => Math.max(currentPage - 1, 1));
   };
 
-  const jump = (page: number) => {
+  const navigate = (page: number) => {
     const pageNumber = Math.max(1, page);
     setCurrentPage(() => Math.min(pageNumber, maxPage));
   };
 
-  return { next, prev, jump, currentData, currentPage, maxPage };
+  return { next, prev, navigate, currentData, currentPage, maxPage };
 };

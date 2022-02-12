@@ -1,0 +1,28 @@
+.flexContainerItemLink {
+  width: 100%;
+  color: var(--dark);
+  text-decoration: none;
+}
+
+.tenantsContainer {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 90vh;
+  margin-top: 56px;
+}
+
+body {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: var(--gradient-bg);
+}
+
+@media (min-width: 1480px) {
+  .tenantsContainer {
+    max-width: 100% !important;
+  }
+}

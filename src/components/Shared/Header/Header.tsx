@@ -1,23 +1,26 @@
-import { AppBar, Toolbar, styled, Typography } from '@mui/material';
+import { AppBar, Toolbar, Typography } from '@mui/material';
+import { NavLink } from 'react-router-dom';
 import styles from './header.module.css';
-
-const StyledAppTitle = styled(Typography)`
-  display: block;
-  padding-left: 16px;
-  cursor: default;
-`;
 
 export const Header = () => {
   return (
     <AppBar
       position="fixed"
-      className={styles.header}
-      sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
+      sx={{
+        zIndex: (theme) => theme.zIndex.drawer + 1,
+        backgroundColor: 'var(--pink) !important',
+      }}
     >
       <Toolbar disableGutters variant="dense">
-        <StyledAppTitle variant="h6" noWrap>
-          Welcome, Tenants App!
-        </StyledAppTitle>
+        <Typography
+          sx={{ display: 'block', paddingLeft: '16px', cursor: 'default' }}
+          variant="h6"
+          noWrap
+        >
+          <NavLink className={styles.headerLink} to="/">
+            Welcome, Tenants App!
+          </NavLink>
+        </Typography>
       </Toolbar>
     </AppBar>
   );

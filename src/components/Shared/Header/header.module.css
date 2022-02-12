@@ -1,3 +1,4 @@
-.header {
-  background-color: #c4a9df !important;
+.headerLink {
+  color: var(--dark);
+  text-decoration: none;
 }

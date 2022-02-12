@@ -10,16 +10,7 @@
     rgb(191, 162, 219),
     rgb(240, 230, 255)
   );
-  --container-bg: #fff;
-  --font: 'Antic Slab', serif;
-  --font-color: #7f7c82;
-}
-
-body {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background: var(--gradient-bg);
+  --pink: #c4a9df;
+  --pink-active: #ccb0e9;
+  --dark: #161616;
 }

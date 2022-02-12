@@ -1,0 +1,1 @@
+export { TenantDetailsCard } from './TenantDetailsCard';
