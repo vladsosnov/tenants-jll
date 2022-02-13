@@ -1,16 +1,11 @@
 import { useEffect, useState } from 'react';
-import {
-  NavLink,
-  useLocation,
-  useNavigate,
-  useSearchParams,
-} from 'react-router-dom';
-import { Header, Loader } from 'components/Shared';
-import { Pagination, List, ListItem, Container } from '@mui/material';
-import { TenantItem } from 'components/TenantItem';
+import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
+import { Loader } from 'components/Shared';
+import { Pagination, Container } from '@mui/material';
 import { usePagination } from 'hooks/usePagination';
-import type { Tenant } from 'types';
+import { TenantsList } from 'components/TenantsList';
 import { tenantsAPI } from 'api';
+import type { Tenant } from 'types';
 import type { AxiosResponse } from 'axios';
 import 'style.css';
 
@@ -73,32 +68,7 @@ export const Tenants = () => {
 
   return (
     <Container className="tenantsContainer">
-      <List
-        sx={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          justifyContent: 'center',
-        }}
-      >
-        {tenantsUP.currentData().map((tenant) => (
-          <ListItem
-            sx={{
-              maxWidth: '300px',
-              margin: '8px 16px',
-              padding: '0 !important',
-              cursor: 'pointer',
-            }}
-            key={tenant.id}
-          >
-            <NavLink
-              className="flexContainerItemLink"
-              to={`/details/${tenant.id}`}
-            >
-              <TenantItem tenant={tenant} />
-            </NavLink>
-          </ListItem>
-        ))}
-      </List>
+      <TenantsList tenants={tenantsUP.currentData()} />
       <Pagination
         count={count}
         size="medium"
