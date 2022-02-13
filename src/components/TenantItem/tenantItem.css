@@ -4,6 +4,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  max-width: 300px;
   min-height: 186px;
   padding: 0 24px 8px;
   background: var(--pink-secondary);

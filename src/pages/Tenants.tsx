@@ -73,7 +73,6 @@ export const Tenants = () => {
 
   return (
     <Container className="tenantsContainer">
-      <Header />
       <List
         sx={{
           display: 'flex',

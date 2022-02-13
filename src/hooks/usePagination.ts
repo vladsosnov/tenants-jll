@@ -1,5 +1,5 @@
-import type { Tenant } from 'types';
 import { useState } from 'react';
+import type { Tenant } from 'types';
 
 export const usePagination = (data: Tenant[], itemsPerPage: number) => {
   const [currentPage, setCurrentPage] = useState(1);

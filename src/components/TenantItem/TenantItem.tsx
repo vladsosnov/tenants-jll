@@ -1,10 +1,10 @@
-import type { FC } from 'react';
-import type { Tenant } from 'types';
 import Avatar from 'react-avatar';
-import styles from './tenantItem.module.css';
 import { Card } from '@material-ui/core';
 import { CardContent, Typography } from '@mui/material';
 import { Box } from '@mui/system';
+import type { Tenant } from 'types';
+import type { FC } from 'react';
+import './tenantItem.css';
 
 interface TenantItemProps {
   tenant: Tenant;
@@ -12,11 +12,11 @@ interface TenantItemProps {
 
 export const TenantItem: FC<TenantItemProps> = ({ tenant }) => {
   const tenantItemHeadClass = tenant.status
-    ? styles.tenantItemHead
-    : styles.tenantItemEmptyHead;
+    ? 'tenantItemHead'
+    : 'tenantItemEmptyHead';
 
   return (
-    <Card className={styles.tenantItem}>
+    <Card className="tenantItem">
       <CardContent className={tenantItemHeadClass}>
         <Avatar size="42" round name={tenant.code} />
         <Box>

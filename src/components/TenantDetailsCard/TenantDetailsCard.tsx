@@ -1,6 +1,6 @@
-import type { FC } from 'react';
 import { Box, Card, CardContent, Typography } from '@mui/material';
 import Avatar from 'react-avatar';
+import type { FC } from 'react';
 import type { Tenant } from 'types';
 
 interface TenantDetailsCardProps {

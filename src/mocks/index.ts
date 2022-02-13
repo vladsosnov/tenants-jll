@@ -1,6 +1,6 @@
 import type { Tenant } from 'types';
 
-export const Tenants: Tenant[] = [
+export const tenants: Tenant[] = [
   {
     id: 't1',
     name: 'Tenant 1',

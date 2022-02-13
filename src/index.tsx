@@ -1,11 +1,11 @@
-import { AppRouter } from 'AppRouter';
 import { StrictMode } from 'react';
 import { render } from 'react-dom';
 import { reportWebVitals } from './reportWebVitals';
+import { App } from 'App';
 
 render(
   <StrictMode>
-    <AppRouter />
+    <App />
   </StrictMode>,
   document.getElementById('root'),
 );

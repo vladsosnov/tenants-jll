@@ -1,13 +1,17 @@
 import { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import { TenantDetailsCard } from 'components/TenantDetailsCard';
-import { Header, Loader } from 'components/Shared';
+import { Loader } from 'components/Shared';
 import { Box, Button } from '@mui/material';
 import { ArrowBack } from '@mui/icons-material';
 import { tenantsAPI } from 'api';
 import type { Tenant } from 'types';
 import type { AxiosResponse } from 'axios';
 import 'style.css';
+
+interface LocationState {
+  tenant: Tenant;
+}
 
 export const TenantDetails = () => {
   const navigate = useNavigate();
@@ -16,7 +20,15 @@ export const TenantDetails = () => {
   const [isLoading, setIsLoading] = useState(false);
   const tenantId: string = params.tenantId || '';
 
+  const location = useLocation();
+  const state = location.state as LocationState;
+
   useEffect(() => {
+    if (state && state.tenant) {
+      setTenant(state.tenant);
+      return;
+    }
+
     setIsLoading(true);
     getTenant();
   }, []);
@@ -45,7 +57,6 @@ export const TenantDetails = () => {
         maxWidth: '768px',
       }}
     >
-      <Header />
       {tenant && (
         <Box>
           <Button

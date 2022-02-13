@@ -48,8 +48,6 @@
         "message": "Don't declare enums"
       }
     ],
-    // import rules
-    "import/no-default-export": "error",
     // react rules
     "react/function-component-definition": [
       "error",
