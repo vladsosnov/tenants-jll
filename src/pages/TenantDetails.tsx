@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { TenantDetailsCard } from 'components/TenantDetailsCard';
 import { Loader } from 'components/Shared';
@@ -6,7 +6,6 @@ import { Box, Button } from '@mui/material';
 import { ArrowBack } from '@mui/icons-material';
 import { tenantsAPI } from 'api';
 import type { Tenant } from 'types';
-import type { AxiosResponse } from 'axios';
 import 'style.css';
 
 export const TenantDetails = () => {
@@ -16,15 +15,9 @@ export const TenantDetails = () => {
   const [isLoading, setIsLoading] = useState(true);
   const tenantId: string = params.tenantId || '';
 
-  useEffect(() => {
-    getTenant();
-  }, []);
-
-  const getTenant = async () => {
+  const getTenant = useCallback(async () => {
     try {
-      const response: AxiosResponse<Tenant | any> = await tenantsAPI.getTenant(
-        tenantId,
-      );
+      const response = await tenantsAPI.getTenant(tenantId);
 
       setTenant(response.data[0]);
     } catch (err) {
@@ -32,7 +25,11 @@ export const TenantDetails = () => {
     }
 
     setIsLoading(false);
-  };
+  }, [tenantId]);
+
+  useEffect(() => {
+    getTenant();
+  }, [getTenant]);
 
   if (isLoading) {
     return <Loader isLoading={isLoading} />;
