@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useNavigate, useParams, useLocation } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { TenantDetailsCard } from 'components/TenantDetailsCard';
 import { Loader } from 'components/Shared';
 import { Box, Button } from '@mui/material';
@@ -9,27 +9,14 @@ import type { Tenant } from 'types';
 import type { AxiosResponse } from 'axios';
 import 'style.css';
 
-interface LocationState {
-  tenant: Tenant;
-}
-
 export const TenantDetails = () => {
   const navigate = useNavigate();
   const params = useParams();
   const [tenant, setTenant] = useState<Tenant | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const tenantId: string = params.tenantId || '';
 
-  const location = useLocation();
-  const state = location.state as LocationState;
-
   useEffect(() => {
-    if (state && state.tenant) {
-      setTenant(state.tenant);
-      return;
-    }
-
-    setIsLoading(true);
     getTenant();
   }, []);
 
