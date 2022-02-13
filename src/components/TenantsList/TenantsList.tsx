@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import type { Tenant } from 'types';
 import type { FC } from 'react';
 import { TenantItem } from 'components/TenantItem';
-
+import './tenantsList.css';
 interface TenantListProps {
   tenants: Tenant[];
 }
@@ -16,6 +16,7 @@ export const TenantsList: FC<TenantListProps> = ({ tenants }) => {
         flexWrap: 'wrap',
         justifyContent: 'center',
       }}
+      className="tenantsList"
     >
       {tenants.map((tenant) => (
         <ListItem

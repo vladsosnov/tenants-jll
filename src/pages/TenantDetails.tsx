@@ -42,7 +42,11 @@ export const TenantDetails = () => {
       }}
     >
       {tenant && (
-        <Box>
+        <Box
+          sx={{
+            margin: '32px !important',
+          }}
+        >
           <Button
             variant="contained"
             startIcon={<ArrowBack />}

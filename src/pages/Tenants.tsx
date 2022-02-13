@@ -54,7 +54,7 @@ export const Tenants = () => {
         page={page}
         variant="outlined"
         shape="rounded"
-        sx={{ display: 'flex', justifyContent: 'center', margin: '36px 0' }}
+        className="tenantsPagination"
         onChange={handleChange}
       />
     </Container>

@@ -24,7 +24,7 @@ export const TenantDetailsCard: FC<TenantDetailsCardProps> = ({ tenant }) => {
           <Avatar size="42" round name={tenant.code} />
         </Box>
         <Typography>{tenant.status}</Typography>
-        <Typography variant="body1" component="div">
+        <Typography variant="body2" component="div">
           {tenant.description}
         </Typography>
       </CardContent>

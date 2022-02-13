@@ -1,0 +1,9 @@
+.tenantsList {
+  padding-bottom: 0;
+}
+
+@media (max-width: 1480px) {
+  .tenantsList {
+    padding-bottom: 92px !important;
+  }
+}

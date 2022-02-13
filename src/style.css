@@ -12,6 +12,12 @@
   margin-top: 56px;
 }
 
+.tenantsPagination {
+  display: flex;
+  justify-content: center;
+  margin: 36px 0;
+}
+
 body {
   position: relative;
   display: flex;
@@ -24,5 +30,26 @@ body {
 @media (min-width: 1480px) {
   .tenantsContainer {
     max-width: 100% !important;
+  }
+}
+
+@media (max-width: 1480px) {
+  .tenantsPagination {
+    position: fixed;
+    bottom: 14px;
+    left: 50%;
+    z-index: 10;
+    margin: 0;
+    padding: 12px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px 1px rgba(0, 0, 0, 0.2) !important;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .tenantsPagination {
+    width: 90%;
   }
 }
