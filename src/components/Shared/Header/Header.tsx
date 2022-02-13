@@ -1,6 +1,5 @@
 import { AppBar, Toolbar, Typography } from '@mui/material';
 import { NavLink } from 'react-router-dom';
-import styles from './header.module.css';
 
 export const Header = () => {
   return (
@@ -8,7 +7,7 @@ export const Header = () => {
       position="fixed"
       sx={{
         zIndex: (theme) => theme.zIndex.drawer + 1,
-        backgroundColor: 'var(--pink) !important',
+        backgroundColor: '#c4a9df !important',
       }}
     >
       <Toolbar disableGutters variant="dense">
@@ -17,7 +16,11 @@ export const Header = () => {
           variant="h6"
           noWrap
         >
-          <NavLink className={styles.headerLink} to="/">
+          <NavLink
+            className="headerLink"
+            style={{ color: '#161616', textDecoration: 'none' }}
+            to="/"
+          >
             Welcome, Tenants App!
           </NavLink>
         </Typography>
