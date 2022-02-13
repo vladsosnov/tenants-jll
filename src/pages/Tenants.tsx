@@ -13,11 +13,10 @@ const PER_PAGE = 20;
 export const Tenants = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
-  const page = Number(searchParams.get('page')) || 1;
   const [tenants, setTenants] = useState<Tenant[]>([]);
   const [isLoading, setIsLoading] = useState(false);
-  const count = Math.ceil(tenants.length / PER_PAGE);
   const pagination = usePagination(tenants, PER_PAGE);
+  const page = Number(searchParams.get('page')) || 1;
 
   const getTenants = useCallback(async () => {
     setIsLoading(true);
@@ -50,7 +49,7 @@ export const Tenants = () => {
       )}
 
       <Pagination
-        count={count}
+        count={pagination.maxPage}
         size="medium"
         page={page}
         variant="outlined"
