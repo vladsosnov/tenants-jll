@@ -53,6 +53,7 @@ export const Tenants = () => {
     try {
       const response: AxiosResponse<Tenant[]> = await tenantsAPI.getTenants();
       setTenants(response.data);
+      navigate('/', { state: { list: tenants } });
     } catch (err) {
       console.log('err', err);
     }

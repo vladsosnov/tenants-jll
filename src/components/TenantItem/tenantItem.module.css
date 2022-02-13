@@ -4,9 +4,9 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: 205px;
-  padding: 24px;
-  background: #dbc9ed;
+  min-height: 186px;
+  padding: 0 24px 8px;
+  background: var(--pink-secondary);
   border-radius: 24px !important;
   box-shadow: 0 4px 20px 1px rgba(0, 0, 0, 0.2) !important;
   backdrop-filter: blur(40px) !important;
