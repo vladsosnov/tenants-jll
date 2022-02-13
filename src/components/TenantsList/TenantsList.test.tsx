@@ -4,7 +4,7 @@ import { TenantsList } from 'components/TenantsList';
 import { tenants } from 'mocks';
 
 describe('TenantsList component', () => {
-  it('Should show tenants list', () => {
+  it('Should show TenantsList', () => {
     renderWithRouter(<TenantsList tenants={tenants} />);
 
     expect(screen.getByText('t1')).toBeInTheDocument();

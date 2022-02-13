@@ -1,5 +1,4 @@
 import { CircularProgress } from '@material-ui/core';
-import { Box } from '@mui/material';
 import type { FC } from 'react';
 
 interface LoaderProps {
@@ -7,5 +6,5 @@ interface LoaderProps {
 }
 
 export const Loader: FC<LoaderProps> = ({ isLoading }) => {
-  return <Box>{isLoading && <CircularProgress />}</Box>;
+  return <>{isLoading && <CircularProgress data-testid="loader" />}</>;
 };
