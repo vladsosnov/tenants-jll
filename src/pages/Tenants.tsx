@@ -15,8 +15,8 @@ export const Tenants = () => {
   const [searchParams] = useSearchParams();
   const [tenants, setTenants] = useState<Tenant[]>([]);
   const [isLoading, setIsLoading] = useState(false);
-  const pagination = usePagination(tenants, PER_PAGE);
   const page = Number(searchParams.get('page')) || 1;
+  const pagination = usePagination(tenants, PER_PAGE, page);
 
   const getTenants = useCallback(async () => {
     setIsLoading(true);
@@ -47,7 +47,6 @@ export const Tenants = () => {
       ) : (
         <TenantsList tenants={pagination.currentData()} />
       )}
-
       <Pagination
         count={pagination.maxPage}
         size="medium"
