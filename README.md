@@ -9,19 +9,19 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### `npm test`
+### `npm run test`
 
 Launches the test runner in the interactive watch mode.
 
-### `npm storybook`
+### `npm run storybook`
 
 Launches the storybook project.
 
-### `npm lint`
+### `npm run lint`
 
 Fix lint errors.
 
-### `npm commit`
+### `npm run commit`
 
 Launches commit CLI.
 
